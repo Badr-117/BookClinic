@@ -6,25 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".login_Activity"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:background="@drawable/wbackground" >
+    android:gravity="center_horizontal">
 
 
     <EditText
-        android:id="@+id/edittext_username"
+        android:id="@+id/editText_email"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_marginTop="300dp"
-        android:drawableLeft=""
         android:background="#ffffff"
-        android:hint="@string/username"/>
+        android:hint="Email"/>
 
     <EditText
-        android:id="@+id/edittext_password"
+        android:id="@+id/editText_password"
         android:layout_width="200dp"
         android:layout_height="35dp"
         android:layout_marginTop="20dp"
-        android:drawableLeft=""
         android:background="#ffffff"
         android:hint="@string/password"/>
     
@@ -40,12 +37,11 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="40dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:textColor="#ffff"
             android:text="@string/not_registered"/>
 
         <TextView
@@ -53,7 +49,6 @@
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:paddingLeft="20dp"
-            android:textColor="#ffff"
             android:textStyle="bold"
             android:text="@string/Register"/>
 
