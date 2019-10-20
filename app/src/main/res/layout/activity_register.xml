@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegisterActivity"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registration"
+        android:textSize="35dp"
+        android:layout_marginTop="20dp">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User type"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:layout_marginTop="150dp">
+    </TextView>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <RadioButton
+            android:id="@+id/radio_admin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="admin"
+            android:onClick="checkUserType">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/radio_employe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="employe"
+            android:onClick="checkUserType">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/radio_patient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="patient"
+            android:onClick="checkUserType">
+        </RadioButton>
+
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/edittext_username"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="#ffffff"
+        android:hint="@string/username"/>
+
+    <EditText
+        android:id="@+id/edittext_email"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="#ffffff"
+        android:hint="Email"/>
+
+    <EditText
+        android:id="@+id/edittext_password"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:background="#ffffff"
+        android:hint="@string/password"/>
+
+
+    <Button
+        android:id="@+id/button_register"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="#03F8AB"
+        android:layout_marginTop="20dp"
+        android:text="@string/Register"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:text="@string/already_registered"/>
+
+        <TextView
+            android:id="@+id/TextViewLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:paddingLeft="20dp"
+            android:textColor="#EA9C00"
+            android:textStyle="bold"
+            android:textSize="19dp"
+            android:text="Login"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
