@@ -8,5 +8,11 @@
     <string name="Register">Register</string>
     <string name="confirm_password">Confirm password</string>
     <string name="already_registered">Already registered?</string>
-
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_closd">Close navigation drawer</string>
+    <string-array name="roles">
+        <item>doctor</item>
+        <item>nurse</item>
+        <item>staff</item>
+    </string-array>
 </resources>

@@ -5,14 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".RegisterActivity"
-    android:gravity="center_horizontal">
+    tools:context=".Main.RegisterActivity"
+    android:gravity="center_horizontal"
+    android:background="@color/colorGrey">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Registration"
         android:textSize="35dp"
+        android:textColor="@color/colorWhite"
         android:layout_marginTop="20dp">
     </TextView>
 
@@ -30,15 +32,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorWhite"
         >
 
-        <RadioButton
-            android:id="@+id/radio_admin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="admin"
-            android:onClick="checkUserType">
-        </RadioButton>
+
 
         <RadioButton
             android:id="@+id/radio_employe"
@@ -52,6 +50,7 @@
             android:id="@+id/radio_patient"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
             android:text="patient"
             android:onClick="checkUserType">
         </RadioButton>

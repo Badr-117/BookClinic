@@ -1,4 +1,4 @@
-package com.example.segproject2019;
+package com.example.segproject2019.Main;
 
 
 import android.content.Intent;
@@ -7,7 +7,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +15,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.segproject2019.R;
+import com.example.segproject2019.User.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -74,6 +75,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (validate()) {
+                    final String id = databaseReference.push().getKey();
                     final String userType = getUserType();
                     final String userName = mTextUsername.getText().toString();
                     final String userEmail = mTextEmail.getText().toString();
@@ -88,8 +90,12 @@ public class RegisterActivity extends AppCompatActivity {
                                     if (task.isSuccessful()) {
 
                                         // Sign in success, update UI with the signed-in user's information
-                                        User userInfo = new User(userName,userEmail, passwordHashed,
+                                        final User userInfo = new User(id, userName,userEmail, passwordHashed,
                                                 userType);
+
+                                        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+                                        String uid = firebaseUser.getUid();
+                                        userInfo.setUserId(uid);
 
                                         FirebaseDatabase.getInstance().getReference("User")
                                                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
@@ -98,6 +104,7 @@ public class RegisterActivity extends AppCompatActivity {
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 Toast.makeText(RegisterActivity.this, "Registration Complete", Toast.LENGTH_SHORT).show();
                                                 startActivity(new Intent(RegisterActivity.this, login_Activity.class));
+
                                             }
                                         });
 
@@ -126,9 +133,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         radioButton = findViewById(radioId);
 
-        if (radioButton == findViewById(R.id.radio_admin)) {
-            setUserType("Admin");
-        } else if (radioButton == findViewById(R.id.radio_employe)) {
+        if (radioButton == findViewById(R.id.radio_employe)) {
             setUserType("Employee");
         } else {
             setUserType("Patient");

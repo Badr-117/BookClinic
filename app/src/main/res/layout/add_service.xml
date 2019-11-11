@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/activity_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="20dp"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add service :"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/add_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your service"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Role_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <RelativeLayout
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/circle"
+            android:backgroundTint="@color/colorPrimary"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_role"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Role:"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:paddingLeft="15dp"
+            />
+
+        <Spinner
+            android:id="@+id/add_role_spinner"
+            android:layout_width="wrap_content"
+            android:layout_weight="2"
+            android:layout_height="30dp">
+        </Spinner>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/saveBtn"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginHorizontal="150dp"
+        android:layout_marginTop="50dp"
+        android:text="Save"
+        android:background="@color/colorPrimary"/>
+
+</LinearLayout>
+
+
+
